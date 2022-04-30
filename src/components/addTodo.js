@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Input } from '@mui/material';
 import { v4 } from 'uuid';
 import '../styles/_main.scss';
@@ -12,16 +12,13 @@ export default function Main(props) {
     setInput(e.target.value);
   }
 
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(state))
-  }, [state])
-
   const addPost = () => {
     if (input.trim() !== '') {
       const newTask = {
         id: v4(),
         text: input,
-        completed: false
+        completed: false,
+        edited: false
       }
       setState([...state, newTask])
       setInput('')

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles/_app.scss';
 import Header from './components/Header';
-import Main from './components/Main';
+import Main from './components/addTodo';
 import Task from './components/Task';
 
 function App() {

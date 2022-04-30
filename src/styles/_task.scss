@@ -38,6 +38,14 @@
             cursor: pointer;
             color: rgb(29, 243, 10);
         }
+        .saveEdit {
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+        .saveEdit:hover{
+            color: green;
+        }
     }
 }
 
