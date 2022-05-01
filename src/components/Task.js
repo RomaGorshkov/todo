@@ -9,7 +9,7 @@ import { Input } from '@mui/material';
 export default function Task({ i, state, setState }) {
 
   const { id, text, completed, edited } = i;
-  const [value, setValue] = useState(text)
+  const [value, setValue] = useState(text);
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(state))
@@ -35,13 +35,14 @@ export default function Task({ i, state, setState }) {
     ])
   };
 
-  const handleChecked = (id) => {
+  const handleChecked = (e) => {
     setState([
       ...state.map(task =>
         task.id === id ? { ...task, completed: !completed } : { ...task }
       )
     ])
   };
+  console.log(completed)
 
   return (
     <div className='tasks'>
@@ -49,7 +50,7 @@ export default function Task({ i, state, setState }) {
         <div className='task'>
           {edited ? <div>
             <Input
-            value={value}
+              value={value}
               onChange={changeNewInput}
             />
             <BiSave
