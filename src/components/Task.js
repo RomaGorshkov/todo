@@ -35,14 +35,13 @@ export default function Task({ i, state, setState }) {
     ])
   };
 
-  const handleChecked = (e) => {
+  const handleChecked = (id) => {
     setState([
       ...state.map(task =>
         task.id === id ? { ...task, completed: !completed } : { ...task }
       )
     ])
   };
-  console.log(completed)
 
   return (
     <div className='tasks'>
