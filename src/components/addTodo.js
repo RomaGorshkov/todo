@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Input } from '@mui/material';
 import { v4 } from 'uuid';
-import '../styles/_main.scss';
+import '../styles/_addTodo.scss';
 
 export default function Main(props) {
   const { state, setState } = props
@@ -24,6 +24,7 @@ export default function Main(props) {
       setInput('')
     } else {
       alert('Enter task')
+      setInput('')
     }
   }
 
