@@ -45,7 +45,7 @@ export default function Task({ i, state, setState }) {
 
   return (
     <div className='tasks'>
-      <div className='tasksField'>
+      <div className='tasks-field'>
         <div className='task'>
           {edited ? <div>
             <Input
@@ -53,17 +53,23 @@ export default function Task({ i, state, setState }) {
               onChange={changeNewInput}
             />
             <BiSave
-              className='saveEdit'
+              className='save-edit'
               onClick={() => saveEditTask(id)} />
           </div> : <>
             <input type='checkbox'
               key={id}
-              checked={completed}
+              defaultChecked={completed}
               onClick={() => handleChecked(id)}
             />
-            <span className={completed ? 'done-task' : 'titleTask'}>{text}</span>
-            <AiFillEdit className='editTask' onClick={() => editTask(id, text)} />
-            <FaTrashAlt className='removeTask' onClick={() => removeTask(id)} />
+            <span className={completed ? 'done-task' : 'title-task'}>{text}</span>
+            <AiFillEdit
+              className='edit-task'
+              onClick={() => editTask(id, text)}
+            />
+            <FaTrashAlt
+              className='remove-task'
+              onClick={() => removeTask(id)}
+            />
           </>}
         </div>
       </div>

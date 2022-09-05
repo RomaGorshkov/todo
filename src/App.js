@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './styles/_app.scss';
+import { Reorder } from 'framer-motion';
 import Header from './components/Header';
-import Main from './components/addTodo';
+import Main from './components/Main';
 import Task from './components/Task';
 
 function App() {
@@ -14,6 +15,21 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(state))
   }, [state]);
 
+  const variants = {
+    initial: {
+      opacity: 0,
+      height: 0,
+    },
+    animate: {
+      opacity: 1,
+      height: 'auto',
+    },
+    exit: {
+      opacity: 0,
+      height: 0,
+    },
+  }
+
   return (
     <div className='App'>
       <Header />
@@ -22,14 +38,21 @@ function App() {
         state={state}
         setState={setState}
       />
-      {state.map((i, index) => (
-        <Task
-          key={index}
-          i={i}
-          state={state}
-          setState={setState}
-        />
-      ))}
+      <Reorder.Group axis='y' values={state} onReorder={setState}>
+        {state.map((i, index) => (
+          <Reorder.Item
+          key={i.id}
+          value={i}
+          {...variants}>
+              <Task
+                key={index}
+                i={i}
+                state={state}
+                setState={setState}
+              />
+            </Reorder.Item>
+        ))}
+      </Reorder.Group>
     </div>
   );
 }

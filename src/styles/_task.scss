@@ -1,52 +1,50 @@
 .tasks {
-    display: flex;
-    justify-content: center;
-    .tasksField {
-        max-width: 500px;
-        min-width: 300px;
-        .task {
-            display: block;
-            border: 1px #039BE5 solid;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 5px;
-            .titleTask {
-                margin: 5px;
-            }
-        }
-        .task:hover {
-            background-color: #039BE5;
-        }
-        .done-task { 
-            text-decoration: line-through;
-            margin: 5px;
-        }
-        .removeTask {
-            float: right;
-            cursor: pointer;
-            padding: 0 5px;
-        }
-        .removeTask:hover{
-            cursor: pointer;
-            color: red;
-        }
-        .editTask {
-            float: right;
-            cursor: pointer;
-        }
-        .editTask:hover{
-            cursor: pointer;
-            color: rgb(29, 243, 10);
-        }
-        .saveEdit {
-            cursor: pointer;
-            float: right;
-            margin-top: 10px;
-        }
-        .saveEdit:hover{
-            color: green;
-        }
+  display: flex;
+  justify-content: center;
+  .tasks-field {
+    max-width: 500px;
+    min-width: 300px;
+    .task {
+      display: block;
+      border: 1px #039BE5 solid;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: #039BE5;
+      }
     }
+    .done-task { 
+      text-decoration: line-through;
+      margin: 5px;
+    }
+    .remove-task {
+      float: right;
+      cursor: pointer;
+      padding: 0 5px;
+      &:hover {
+        cursor: pointer;
+        color: red;
+      }
+    }
+    .edit-task {
+      float: right;
+      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+        color: rgb(29, 243, 10);
+      }
+    }
+    .save-edit {
+      cursor: pointer;
+      float: right;
+      margin-top: 10px;
+      &:hover {
+        color: green;
+      }
+    }
+  }
 }
 
 input {
